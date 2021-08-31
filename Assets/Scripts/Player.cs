@@ -5,6 +5,7 @@ using UnityEngine;
 public class Player : MonoBehaviour
 {
     private Rigidbody2D meuRb;
+    [SerializeField] private float velocidade = 5f;
 
     void Start()
     {
@@ -14,9 +15,15 @@ public class Player : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKey(KeyCode.Space))
+        if (Input.GetKeyDown(KeyCode.Space))
         {
             Debug.Log("pulou");
+            meuRb.velocity = Vector2.up * velocidade;
+        }
+
+        if (meuRb.velocity.y < -velocidade)
+        {
+            meuRb.velocity = Vector2.down * velocidade;
         }
     }
 }
