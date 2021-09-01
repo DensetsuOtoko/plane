@@ -2,10 +2,10 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Player : MonoBehaviour
+public class PlayerController : MonoBehaviour
 {
     private Rigidbody2D meuRb;
-    [SerializeField] private float velocidade = 5f;
+    [SerializeField] private float velocidade = 2.5f;
 
     void Start()
     {
@@ -23,7 +23,7 @@ public class Player : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Space))
         {
-            Debug.Log("pulou");
+            Debug.Log(velocidade);
             meuRb.velocity = Vector2.up * velocidade;
         }
     }
