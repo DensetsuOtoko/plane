@@ -140,6 +140,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   timer: 1
+  posMin: -0.3
+  posMax: 2.3
   obstaculo: {fileID: 9016880199587514872, guid: 20d94902f51b9c845a1d650aae3efab5,
     type: 3}
   posicaoObstaculo: {x: 12, y: 0, z: 0}
@@ -347,6 +349,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5585770102769804500, guid: 9af3e407d9c7b6a4280ba5d478c052b7,
+        type: 3}
+      propertyPath: velocidade
+      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9af3e407d9c7b6a4280ba5d478c052b7, type: 3}
