@@ -140,8 +140,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   timer: 1
-  posMin: -0.3
-  posMax: 2.3
+  timerMin: 0.5
+  timerMax: 2.5
+  posMin: -1.32
+  posMax: 1.75
   obstaculo: {fileID: 9016880199587514872, guid: 20d94902f51b9c845a1d650aae3efab5,
     type: 3}
   posicaoObstaculo: {x: 12, y: 0, z: 0}

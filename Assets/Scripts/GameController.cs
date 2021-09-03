@@ -8,7 +8,7 @@ public class GameController : MonoBehaviour
     [SerializeField] private float timerMin = 0.6f;
     [SerializeField] private float timerMax = 2.5f;
     [SerializeField] private float posMin = -1.32f;
-    [SerializeField] private float posMax = 1.55f;
+    [SerializeField] private float posMax = 1.75f;
     [SerializeField] private GameObject obstaculo;
     [SerializeField] private Vector3 posicaoObstaculo;
     void Start()
