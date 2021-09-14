@@ -11,6 +11,7 @@ public class GameController : MonoBehaviour
     [SerializeField] private float posMax = 1.75f;
     [SerializeField] private GameObject obstaculo;
     [SerializeField] private Vector3 posicaoObstaculo;
+    private float pontos = 0f;
     void Start()
     {
 
@@ -19,6 +20,12 @@ public class GameController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        GerandoObstaculos();
+        GerandoPontos();
+    }
+
+    private void GerandoObstaculos()
+    {
         timer -= Time.deltaTime;
         if (timer <= 0)
         {
@@ -26,5 +33,11 @@ public class GameController : MonoBehaviour
             Instantiate(obstaculo, posicaoObstaculo, Quaternion.identity);
             timer = Random.Range(timerMin, timerMax);
         }
+    }
+
+    private void GerandoPontos()
+    {
+        pontos += Time.deltaTime;
+        Debug.Log(Mathf.Round(pontos));
     }
 }
