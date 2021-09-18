@@ -12,8 +12,12 @@ public class GameController : MonoBehaviour
     [SerializeField] private float posMax = 1.75f;
     [SerializeField] private GameObject obstaculo;
     [SerializeField] private Vector3 posicaoObstaculo;
-    private float pontos;
     [SerializeField] private Text pontosCanvas;
+    [SerializeField] private Text levelCanvas;
+    private float proximoLevel = 10;
+    private float level = 1;
+    private float pontos;
+
     void Start()
     {
 
@@ -24,6 +28,7 @@ public class GameController : MonoBehaviour
     {
         GerandoObstaculos();
         GerandoPontos();
+        GanhandoLevel();
     }
 
     private void GerandoObstaculos()
@@ -41,5 +46,15 @@ public class GameController : MonoBehaviour
     {
         pontos += Time.deltaTime;
         pontosCanvas.text = Mathf.Round(pontos).ToString();
+    }
+
+    private void GanhandoLevel()
+    {
+        if (pontos >= proximoLevel)
+        {
+            proximoLevel*=2;
+            level++;
+            levelCanvas.text = level.ToString();
+        }
     }
 }
