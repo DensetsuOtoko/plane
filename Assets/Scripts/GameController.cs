@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class GameController : MonoBehaviour
 {
@@ -11,7 +12,8 @@ public class GameController : MonoBehaviour
     [SerializeField] private float posMax = 1.75f;
     [SerializeField] private GameObject obstaculo;
     [SerializeField] private Vector3 posicaoObstaculo;
-    private float pontos = 0f;
+    private float pontos;
+    [SerializeField] private Text pontosCanvas;
     void Start()
     {
 
@@ -38,6 +40,6 @@ public class GameController : MonoBehaviour
     private void GerandoPontos()
     {
         pontos += Time.deltaTime;
-        Debug.Log(Mathf.Round(pontos));
+        pontosCanvas.text = Mathf.Round(pontos).ToString();
     }
 }
