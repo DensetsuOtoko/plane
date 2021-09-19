@@ -22,7 +22,6 @@ public class ObstaculoController : MonoBehaviour
     {
         /* movendo montanhas para a esquerda*/
         transform.position += Vector3.left * Time.deltaTime * RetornandoVelocidadeDeAcordoComLevel();
-        gameController.RetornaLevel();
     }
 
     private float RetornandoVelocidadeDeAcordoComLevel()

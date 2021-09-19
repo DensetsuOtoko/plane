@@ -36,7 +36,7 @@ public class GameController : MonoBehaviour
         timer -= Time.deltaTime;
         if (timer <= 0)
         {
-            posicaoObstaculo.y = Random.Range(posMin, posMax);
+            posicaoObstaculo.y = Random.Range(posMin / level, posMax);
             Instantiate(obstaculo, posicaoObstaculo, Quaternion.identity);
             timer = Random.Range(timerMin, timerMax);
         }
