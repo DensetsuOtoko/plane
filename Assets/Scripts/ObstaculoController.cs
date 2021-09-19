@@ -9,9 +9,11 @@ public class ObstaculoController : MonoBehaviour
     public Transform transform;
     [SerializeField] private float velocidade = 5f;
     [SerializeField] private GameObject myself;
+    [SerializeField] private GameController gameController;
     void Start()
     {
         transform = GetComponent<Transform>();
+        gameController = FindObjectOfType<GameController>();
         Destroy(myself, 9f);
     }
 
@@ -19,6 +21,12 @@ public class ObstaculoController : MonoBehaviour
     void Update()
     {
         /* movendo montanhas para a esquerda*/
-        transform.position += Vector3.left * Time.deltaTime * velocidade;
+        transform.position += Vector3.left * Time.deltaTime * RetornandoVelocidadeDeAcordoComLevel();
+        gameController.RetornaLevel();
+    }
+
+    private float RetornandoVelocidadeDeAcordoComLevel()
+    {
+        return velocidade + gameController.RetornaLevel();
     }
 }

@@ -15,7 +15,7 @@ public class GameController : MonoBehaviour
     [SerializeField] private Text pontosCanvas;
     [SerializeField] private Text levelCanvas;
     private float proximoLevel = 10;
-    private float level = 1;
+    private int level = 1;
     private float pontos;
 
     void Start()
@@ -56,5 +56,9 @@ public class GameController : MonoBehaviour
             level++;
             levelCanvas.text = level.ToString();
         }
+    }
+    public int RetornaLevel()
+    {
+        return level;
     }
 }
