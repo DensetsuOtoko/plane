@@ -7,11 +7,14 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour
 {
     private Rigidbody2D meuRb;
+    private Transform transformAviao;
+    private float regraLimiteTetoFundo = 5.80f;
     [SerializeField] private float velocidade = 2.5f;
 
     void Start()
     {
         meuRb = GetComponent<Rigidbody2D>();
+        transformAviao = GetComponent<Transform>();
     }
 
     // Update is called once per frame
@@ -19,6 +22,7 @@ public class PlayerController : MonoBehaviour
     {
         Subir();
         LimitandoVelocidade();
+        RegraAviao();
     }
 
     private void Subir()
@@ -37,7 +41,19 @@ public class PlayerController : MonoBehaviour
         }
     }
 
+    private void RegraAviao()
+    {
+        float y = transformAviao.position.y;
+        if (y > regraLimiteTetoFundo || y < -regraLimiteTetoFundo)
+        {
+            ReiniciarJogo();
+        }
+    }
     private void OnTriggerEnter2D(Collider2D other)
+    {
+        ReiniciarJogo();
+    }
+    private void ReiniciarJogo()
     {
         SceneManager.LoadScene("Jogo");
     }
